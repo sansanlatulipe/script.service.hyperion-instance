@@ -28,6 +28,6 @@ class Http:
 
     def _decodeResponse(self):
         response = json.loads(self.connection.getresponse().read().decode())
-        if not response.get('succes'):
+        if not response.get('success'):
             raise IOError(response.get('error'))
         return response

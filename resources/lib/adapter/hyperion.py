@@ -4,12 +4,12 @@ class Instance:
         self.controlledInstance = controlledInstance
 
     def list(self):
-        return self.http.call('serverinfo').get('instance')
+        return self.http.call('serverinfo').get('info').get('instance')
 
     def isOn(self):
         for instance in self.list():
-            if instance.instance == self.controlledInstance:
-                return instance.running
+            if instance.get('instance') == self.controlledInstance:
+                return instance.get('running')
         return False
 
     def on(self):
