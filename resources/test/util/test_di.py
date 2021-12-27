@@ -29,7 +29,7 @@ class ContainerShould(unittest.TestCase):
     def test_contain_the_following_services(self):
         services = [
             'addon',
-            'led.controller',
+            'led.manager',
             'video.monitor',
             'hyperion.instance',
             'kodi.monitor',
