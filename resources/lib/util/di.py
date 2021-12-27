@@ -40,12 +40,12 @@ class Container:
         )
 
     def _initKodiMonitor(self):
-        return kodi.MyMonitor()
+        return xbmcmod.Monitor()
 
     def _initKodiPlayer(self):
-        return kodi.MyPlayer(
-            self.get('led.manager')
-        )
+        player = kodi.MyPlayer()
+        player.setLedManager(self.get('led.manager'))
+        return player
 
     def _initHyperionHttp(self):
         return hyperionInfra.Http(

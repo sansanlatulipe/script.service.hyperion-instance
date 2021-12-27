@@ -1,14 +1,8 @@
-from resources.lib.infra.xbmcmod import Monitor
 from resources.lib.infra.xbmcmod import Player
 
 
-class MyMonitor(Monitor):
-    pass
-
-
 class MyPlayer(Player):
-    def __init__(self, ledManager):
-        Player.__init__(self)
+    def setLedManager(self, ledManager):
         self.ledManager = ledManager
 
     def onPlayBackStarted(self):

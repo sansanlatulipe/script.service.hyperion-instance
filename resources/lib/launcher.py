@@ -6,7 +6,7 @@ class Launcher:
         self.container = Container()
 
     def switch(self):
-        self.container.get('led.controller').switch()
+        self.container.get('led.manager').switch()
 
     def monitor(self):
         self.container.get('video.monitor').run()
