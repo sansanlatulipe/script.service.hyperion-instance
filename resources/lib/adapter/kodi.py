@@ -2,6 +2,10 @@ from resources.lib.infra.xbmcmod import Player
 
 
 class MyPlayer(Player):
+    def __init__(self):
+        self.ledManager = None
+        Player.__init__(self)
+
     def setLedManager(self, ledManager):
         self.ledManager = ledManager
 

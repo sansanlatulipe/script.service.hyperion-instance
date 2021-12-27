@@ -3,19 +3,12 @@ from resources.test.testmod import mock
 from resources.lib.adapter import kodi
 
 
-class MyMonitorShould(unittest.TestCase):
-    def setUp(self):
-        self.monitor = kodi.MyMonitor()
-
-    def test_initialize_service(self):
-        pass
-
-
 class MyPlayerShould(unittest.TestCase):
     @mock.patch('resources.lib.service.led.Manager')
     def setUp(self, ledManager):
         self.ledManager = ledManager
-        self.player = kodi.MyPlayer(ledManager)
+        self.player = kodi.MyPlayer()
+        self.player.setLedManager(ledManager)
 
     def test_turn_led_on_when_start_playing_video(self):
         self.ledManager.on = mock.Mock(return_value=None)
