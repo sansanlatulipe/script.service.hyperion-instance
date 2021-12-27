@@ -1,4 +1,4 @@
-class Controller:
+class Manager:
     def __init__(self, hyperionInstance):
         self.instance = hyperionInstance
 

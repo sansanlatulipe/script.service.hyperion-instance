@@ -7,19 +7,19 @@ class MyMonitor(Monitor):
 
 
 class MyPlayer(Player):
-    def __init__(self, ledController):
+    def __init__(self, ledManager):
         Player.__init__(self)
-        self.ledController = ledController
+        self.ledManager = ledManager
 
     def onPlayBackStarted(self):
         if self.isPlayingVideo():
-            self.ledController.on()
+            self.ledManager.on()
 
     def onPlayBackResumed(self):
         self.onPlayBackStarted()
 
     def onPlayBackStopped(self):
-        self.ledController.off()
+        self.ledManager.off()
 
     def onPlayBackEnded(self):
         self.onPlayBackStopped()

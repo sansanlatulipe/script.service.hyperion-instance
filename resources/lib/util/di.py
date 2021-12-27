@@ -22,8 +22,8 @@ class Container:
     def _initAddon(self):
         return xbmcmod.Addon()
 
-    def _initLedController(self):
-        return led.Controller(
+    def _initLedManager(self):
+        return led.Manager(
             self.get('hyperion.instance')
         )
 
@@ -44,7 +44,7 @@ class Container:
 
     def _initKodiPlayer(self):
         return kodi.MyPlayer(
-            self.get('led.controller')
+            self.get('led.manager')
         )
 
     def _initHyperionHttp(self):
