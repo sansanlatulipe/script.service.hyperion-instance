@@ -1,0 +1,4 @@
+# First version
+
+- Only control the first instance
+- Manual switch

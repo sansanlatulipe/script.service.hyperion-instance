@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30000">
+        <setting type="lsep" label="30100" />
+        <setting type="ipaddress" label="30110" id="hyperion_ip" default="127.0.0.1" />
+        <setting type="number" label="30120" id="hyperion_port" default="8090" />
+        <setting type="text" label="30130" id="hyperion_token" />
+
+        <setting type="lsep" label="30200" />
+        <setting type="select" label="30210" id="hyperion_instance" values="1" default="1" />
+        <setting type="select" label="30220" id="hyperion_status" lvalues="30221|30222" default="30222" enable="false" />
+        <setting type="action" label="30230" action="RunScript(script.service.hyperion-instance,switch)" />
+    </category>
+
+    <category label="31000">
+        <setting type="lsep" label="31100" />
+        <setting type="bool" label="31110" id="sync_movies" default="true" />
+    </category>
+</settings>

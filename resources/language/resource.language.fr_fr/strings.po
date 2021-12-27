@@ -1,0 +1,71 @@
+# Kodi Media Center language file
+# Addon Name: Synchronization with Betaseries
+# Addon id: script.service.betaseries-watched
+# Addon Provider: SansanLaTulipe
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@kodi.org\n"
+"POT-Creation-Date: 2020-11-02 00:00+0100\n"
+"PO-Revision-Date: 2020-11-02 00:00+0100\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#20000"
+msgid "Dialog connection header"
+msgstr "Connection à Betaseries"
+
+msgctxt "#20001"
+msgid "Dialog connection message"
+msgstr ""
+"Veuillez aller sur {0}\n"
+"et saisir le code {1}"
+
+msgctxt "#21000"
+msgid "Dialog synchronization header"
+msgstr "Synchronisation avec Betaseries"
+
+msgctxt "#21001"
+msgid "Dialog synchronization message"
+msgstr "Démarrage du scan complet..."
+
+msgctxt "#30000"
+msgid "Settings"
+msgstr "Général"
+
+msgctxt "#30010"
+msgid "Settings Betaseries connection"
+msgstr "Initialiser la connexion"
+
+msgctxt "#31000"
+msgid "Settings synchronization"
+msgstr "Synchronisation"
+
+msgctxt "#31010"
+msgid "Settings synchronize movies"
+msgstr "Synchroniser les films"
+
+msgctxt "#31020"
+msgid "Settings synchronize TV shows"
+msgstr "Synchroniser les séries"
+
+msgctxt "#32000"
+msgid "Settings notifications"
+msgstr "Notifications de Betaseries"
+
+msgctxt "#32010"
+msgid "Settings notify by e-mail"
+msgstr "Envoyer un e-mail lors des mises à jour"
+
+msgctxt "#32020"
+msgid "Settings notify on Twitter"
+msgstr "Partager les mises à jour sur Twitter"
+
+msgctxt "#32030"
+msgid "Settings notify on profile"
+msgstr "Afficher les mises à jour sur votre profil"
