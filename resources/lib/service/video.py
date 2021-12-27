@@ -5,4 +5,4 @@ class Monitor:
 
     def run(self):
         while not self.monitor.abortRequested():
-            monitor.waitForAbort(60)
+            self.monitor.waitForAbort(60)

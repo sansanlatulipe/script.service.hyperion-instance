@@ -1,5 +1,4 @@
 import json
-from resources.lib.infra import pymod
 
 
 class Http:

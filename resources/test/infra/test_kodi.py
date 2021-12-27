@@ -10,6 +10,7 @@ class MyMonitorShould(unittest.TestCase):
     def test_initialize_service(self):
         pass
 
+
 class MyPlayerShould(unittest.TestCase):
     @mock.patch('resources.lib.service.led.Controller')
     def setUp(self, ledController):
@@ -25,7 +26,7 @@ class MyPlayerShould(unittest.TestCase):
 
         self.assertEqual(2, self.ledController.on.call_count)
 
-    def test_not_turn_led_on_when_start_playing_music():
+    def test_not_turn_led_on_when_start_playing_music(self):
         self.ledController.on = mock.Mock(return_value=None)
         self.player.setPlayingMode('music')
 

@@ -8,7 +8,7 @@ class Instance:
 
     def isOn(self):
         for instance in self.list():
-            if instance.instance == self.controlledInstance
+            if instance.instance == self.controlledInstance:
                 return instance.running
         return False
 

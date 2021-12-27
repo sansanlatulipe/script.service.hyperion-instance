@@ -33,7 +33,8 @@ class ContainerShould(unittest.TestCase):
             'video.monitor',
             'hyperion.instance',
             'kodi.monitor',
-            'kodi.player'
+            'kodi.player',
+            'hyperion.http'
         ]
         for service in services:
             self.assertIsNotNone(self.container.get(service))

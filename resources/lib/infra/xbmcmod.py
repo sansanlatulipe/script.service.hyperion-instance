@@ -51,11 +51,10 @@ except ImportError:
     class Addon:
         def __init__(self):
             self.settings = {
-                'sync_movies': 'true',
-                'sync_tvshows': 'false',
-                'notify_mail': 'false',
-                'notify_twitter': 'false',
-                'update_profile': 'false'
+                'hyperion_ip': '127.0.0.1',
+                'hyperion_port': '8090',
+                'hyperion_token': None,
+                'hyperion_instance': 1
             }
 
         def getAddonInfo(self, key):
