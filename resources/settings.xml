@@ -8,12 +8,6 @@
 
         <setting type="lsep" label="30200" />
         <setting type="select" label="30210" id="hyperion_instance" values="1" default="1" />
-        <setting type="select" label="30220" id="hyperion_status" lvalues="30221|30222" default="30222" enable="false" />
-        <setting type="action" label="30230" action="RunScript(script.service.hyperion-instance,switch)" />
-    </category>
-
-    <category label="31000">
-        <setting type="lsep" label="31100" />
-        <setting type="bool" label="31110" id="sync_movies" default="true" />
+        <setting type="action" label="30220" action="RunScript(script.service.hyperion-instance,switch)" />
     </category>
 </settings>

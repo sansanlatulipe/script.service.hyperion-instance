@@ -1,6 +1,6 @@
 # Kodi Media Center language file
-# Addon Name: Synchronization with Betaseries
-# Addon id: script.service.betaseries-watched
+# Addon Name: Hyperion instance switcher
+# Addon id: script.service.hyperion-instance
 # Addon Provider: SansanLaTulipe
 msgid ""
 msgstr ""
@@ -16,56 +16,34 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgctxt "#20000"
-msgid "Dialog connection header"
-msgstr "Betaseries connection"
-
-msgctxt "#20001"
-msgid "Dialog connection message"
-msgstr ""
-"Please go to {0}\n"
-"and enter the code {1}"
-
-msgctxt "#21000"
-msgid "Dialog synchronization header"
-msgstr "Synchronization with Betaseries"
-
-msgctxt "#21001"
-msgid "Dialog synchronization message"
-msgstr "Starting full scan..."
-
 msgctxt "#30000"
-msgid "Settings"
-msgstr "General"
+msgid "Settings Hyperion"
+msgstr "Hyperion"
 
-msgctxt "#30010"
-msgid "Settings Betaseries connection"
-msgstr "Initialize the connection"
+msgctxt "#30100"
+msgid "Settings Hyperion connection"
+msgstr "Connection"
 
-msgctxt "#31000"
-msgid "Settings synchronization"
-msgstr "Synchronization"
+msgctxt "#30110"
+msgid "Settings Hyperion connection ip"
+msgstr "IP Address"
 
-msgctxt "#31010"
-msgid "Settings synchronize movies"
-msgstr "Synchronize movies"
+msgctxt "#30120"
+msgid "Settings Hyperion connection port"
+msgstr "Port"
 
-msgctxt "#31020"
-msgid "Settings synchronize TV shows"
-msgstr "Synchronize TV shows"
+msgctxt "#30130"
+msgid "Settings Hyperion connection token"
+msgstr "Access token"
 
-msgctxt "#32000"
-msgid "Settings notifications"
-msgstr "Betaseries notifications"
+msgctxt "#30200"
+msgid "Settings Hyperion instance"
+msgstr "Instance"
 
-msgctxt "#32010"
-msgid "Settings notify by e-mail"
-msgstr "Send an email when updates are done"
+msgctxt "#30210"
+msgid "Settings Hyperion instance name"
+msgstr "Name"
 
-msgctxt "#32020"
-msgid "Settings notify on Twitter"
-msgstr "Share updates on Twitter"
-
-msgctxt "#32030"
-msgid "Settings notify on profile"
-msgstr "Display updates on your profile"
+msgctxt "#30220"
+msgid "Settings Hyperion instance switch"
+msgstr "Switch"
