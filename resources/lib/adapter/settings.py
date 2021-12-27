@@ -9,10 +9,10 @@ class Settings:
         return self.addon.getSetting('hyperion_ip')
 
     def getHyperionPort(self):
-        return self.addon.getSetting('hyperion_port')
+        return int(self.addon.getSetting('hyperion_port'))
 
     def getHyperionToken(self):
         return self.addon.getSetting('hyperion_token')
 
     def getHyperionInstance(self):
-        return self.addon.getSetting('hyperion_instance')
+        return int(self.addon.getSetting('hyperion_instance'))
