@@ -12,13 +12,12 @@
 		<summary lang="fr_FR">Interrupter d'instance Hyperion</summary>
 		<description lang="en_GB">This service automatically turn on a Hyperion instance when a video is playing and turn it off otherwise</description>
 		<description lang="fr_FR">Ce service allume automatiquement une instance Hyperion quand une vidéo est en cours et l'éteint sinon</description>
-		<news>
-			{{ addon_changelog }}
-		</news>
-
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
 		<source>https://github.com/SansanLaTulipe/script.service.hyperion-instance</source>
+		<news>
+			{{ addon_changelog }}
+		</news>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
