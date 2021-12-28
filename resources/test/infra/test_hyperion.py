@@ -1,3 +1,4 @@
+import json
 from resources.test.testmod import unittest
 from resources.test.testmod import mock
 from resources.lib.infra import hyperion
@@ -26,12 +27,15 @@ class HttpShould(unittest.TestCase):
         self.connection.request = mock.Mock()
         self.connection.getresponse = mock.Mock(return_value=FakeResponse())
 
+        expectedBody = {'command': 'instance'}
+        expectedBody.update({'subcommand': 'startInstance'})
+
         self.http.call('instance', {'subcommand': 'startInstance'})
 
         self.connection.request.assert_called_once_with(
             'POST',
             '/json-rpc',
-            '{"command": "instance", "subcommand": "startInstance"}',
+            json.dumps(expectedBody),
             {}
         )
 
