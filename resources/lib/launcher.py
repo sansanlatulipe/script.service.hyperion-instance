@@ -1,5 +1,5 @@
-from resources.lib.util.di import Container
 from resources.lib.infra.xbmcmod import Dialog
+from resources.lib.util.di import Container
 
 
 class Launcher:

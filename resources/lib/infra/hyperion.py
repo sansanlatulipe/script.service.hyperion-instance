@@ -1,4 +1,5 @@
 import json
+from resources.lib.util import log
 
 
 class Http:
@@ -29,5 +30,6 @@ class Http:
     def _decodeResponse(self):
         response = json.loads(self.connection.getresponse().read().decode())
         if not response.get('success'):
+            log.warn('An error occurs while calling Hyperion API: ' + response.get('error'))
             raise IOError(response.get('error'))
         return response
