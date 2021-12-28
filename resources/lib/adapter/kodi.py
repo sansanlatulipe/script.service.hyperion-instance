@@ -10,14 +10,20 @@ class MyPlayer(Player):
         self.ledManager = ledManager
 
     def onPlayBackStarted(self):
-        if self.isPlayingVideo():
-            self.ledManager.on()
+        try:
+            if self.isPlayingVideo():
+                self.ledManager.on()
+        except IOError:
+            pass
 
     def onPlayBackResumed(self):
         self.onPlayBackStarted()
 
     def onPlayBackStopped(self):
-        self.ledManager.off()
+        try:
+            self.ledManager.off()
+        except IOError:
+            pass
 
     def onPlayBackEnded(self):
         self.onPlayBackStopped()

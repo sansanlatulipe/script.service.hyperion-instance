@@ -36,3 +36,21 @@ class MyPlayerShould(unittest.TestCase):
         self.player.onPlayBackPaused()
 
         self.assertEqual(3, self.ledManager.off.call_count)
+
+    def test_ignore_manager_error_when_turning_instance_on(self):
+        self.ledManager.on = mock.Mock(side_effect=IOError())
+        self.player.setPlayingMode('video')
+
+        self.player.onPlayBackStarted()
+        self.player.onPlayBackResumed()
+
+        self.assertEqual(2, self.ledManager.on.call_count)
+
+    def test_ignore_manager_error_when_turning_instance_off(self):
+        self.ledManager.off = mock.Mock(side_effect=IOError())
+
+        self.player.onPlayBackStopped()
+        self.player.onPlayBackEnded()
+        self.player.onPlayBackPaused()
+
+        self.assertEqual(3, self.ledManager.off.call_count)
