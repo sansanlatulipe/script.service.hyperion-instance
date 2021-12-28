@@ -4,7 +4,11 @@ class Instance:
         self.managedInstance = managedInstance
 
     def list(self):
-        return self.http.call('serverinfo').get('info').get('instance')
+        return [
+            instance
+            for instance in self.http.call('serverinfo').get('info').get('instance')
+            if instance.get('instance') != 0
+        ]
 
     def isOn(self):
         for instance in self.list():
