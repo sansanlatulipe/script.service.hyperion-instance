@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '**.py'
+    tags-ignore:
+      - *
 
 jobs:
   lint:
