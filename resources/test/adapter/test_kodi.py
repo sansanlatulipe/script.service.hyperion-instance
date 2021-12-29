@@ -16,8 +16,9 @@ class MyPlayerShould(unittest.TestCase):
 
         self.player.onPlayBackStarted()
         self.player.onPlayBackResumed()
+        self.player.onAVStarted()
 
-        self.assertEqual(2, self.ledManager.on.call_count)
+        self.assertEqual(3, self.ledManager.on.call_count)
 
     def test_not_turn_led_on_when_start_playing_music(self):
         self.ledManager.on = mock.Mock(return_value=None)
@@ -25,6 +26,7 @@ class MyPlayerShould(unittest.TestCase):
 
         self.player.onPlayBackStarted()
         self.player.onPlayBackResumed()
+        self.player.onAVStarted()
 
         self.ledManager.on.assert_not_called()
 
@@ -43,8 +45,9 @@ class MyPlayerShould(unittest.TestCase):
 
         self.player.onPlayBackStarted()
         self.player.onPlayBackResumed()
+        self.player.onAVStarted()
 
-        self.assertEqual(2, self.ledManager.on.call_count)
+        self.assertEqual(3, self.ledManager.on.call_count)
 
     def test_ignore_manager_error_when_turning_instance_off(self):
         self.ledManager.off = mock.Mock(side_effect=IOError())

@@ -38,6 +38,7 @@ except ImportError:
         def setPlayingMode(self, mode):
             self.mode = mode
 
+
     class Addon:
         def __init__(self):
             self.settings = {
