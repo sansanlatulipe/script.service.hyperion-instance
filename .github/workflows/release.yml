@@ -34,7 +34,7 @@ jobs:
       - name: Check addon resources
         run: |
           pip install kodi-addon-checker
-          kodi-addon-checker
+          kodi-addon-checker --branch matrix
       - name: Build asset
         env:
           addon_name: ${{ steps.config.outputs.addon_name }}
