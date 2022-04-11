@@ -30,7 +30,7 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Analysing the code with pylint
         run: |
-          pylint `find . -name '*.py' | grep -v '^./resources/test/'`
+          pylint --ignore-paths=$(pwd)/resources/test $(pwd)
 
   unittest:
     runs-on: ubuntu-latest
