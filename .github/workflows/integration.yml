@@ -2,8 +2,11 @@ name: Check quality
 
 on:
   push:
+    branches:
+      - '**'
     paths:
       - '**.py'
+      - '.github/**'
 
 jobs:
   lint:
