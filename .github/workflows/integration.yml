@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Check coding style
-        uses: sansanlatulipe/github-actions/python-lint@v0.2
+        uses: sansanlatulipe/github-actions/python-lint@main
         with:
           python-version: 3.x
           exclude-path: resources/test
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run unit tests
-        uses: sansanlatulipe/github-actions/python-unittest@v0.2
+        uses: sansanlatulipe/github-actions/python-unittest@main
         with:
           python-version: ${{ matrix.python-version }}
           coverage-path: ./resources/lib/
