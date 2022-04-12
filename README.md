@@ -1,5 +1,5 @@
 [![GitHub release](https://img.shields.io/github/v/release/sansanlatulipe/script.service.hyperion-instance.svg)](https://github.com/sansanlatulipe/script.service.hyperion-instance/releases)
-[![Integration](https://github.com/sansanlatulipe/script.service.hyperion-instance/actions/workflows/integration.yml/badge.svg)](https://github.com/sansanlatulipe/script.service.hyperion-instance/actions/workflows/integration.yml)
+[![Integration](https://github.com/sansanlatulipe/script.service.hyperion-instance/workflows/Integration/badge.svg)](https://github.com/sansanlatulipe/script.service.hyperion-instance/actions/workflows/integration.yml)
 [![Codecov status](https://img.shields.io/codecov/c/github/sansanlatulipe/script.service.hyperion-instance/main)](https://codecov.io/gh/sansanlatulipe/script.service.hyperion-instance/branch/main)
 
 Introduction
