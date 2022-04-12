@@ -2,29 +2,25 @@
 [![Integration](https://github.com/sansanlatulipe/script.service.hyperion-instance/workflows/Integration/badge.svg)](https://github.com/sansanlatulipe/script.service.hyperion-instance/actions/workflows/integration.yml)
 [![Codecov status](https://img.shields.io/codecov/c/github/sansanlatulipe/script.service.hyperion-instance/main)](https://codecov.io/gh/sansanlatulipe/script.service.hyperion-instance/branch/main)
 
-Introduction
-============
+# Hyperion instance switcher
 
-This service automatically turn on a Hyperion instance when a video is playing and turn it off otherwise
+This project is a service addon for Kodi media center.
+It automatically turns a Hyperion LED instance on when a video is playing and turn it off otherwise.
 
-Features
-========
+## Features
 
+* Automatically switch the LED instance while playing a video
+* Manually switch the managed LED instance
 * Handle local or distant hosted Hyperion
 * Authentication through access token
-* Manually switch the managed LED instance
-* Automatically switch the LED instance while playing a video
 
-To do
------
+### To do
 
 * Select the Hyperion LED instance to manage
 
-How it works
-============
+## How it works
 
-Business logic
---------------
+### Business logic
 
 Monitor the Kodi player.
 When it starts playing a medium, if it is a video then asks Hyperion to turn on the managed LED instance on.
@@ -32,8 +28,7 @@ When it stops playing the medium, asks Hyperion to turn the managed LED instance
 
 The Hyperion managed LED instance can be selected from the add-on settings.
 
-Technical logic
----------------
+### Technical logic
 
 The add-on is launched from `service.py`.
 
