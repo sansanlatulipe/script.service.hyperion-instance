@@ -9,6 +9,25 @@ class ManagerShould(unittest.TestCase):
         self.instance = instance
         self.manager = led.Manager(instance)
 
+    def test_retrieve_available_instance_when_listing_them_from_hyperion(self):
+        expectedInstances = ['Instance 1', 'Instance 2']
+        self.instance.list = mock.Mock(return_value=[
+            {'instance': 1, 'friendly_name': expectedInstances[0]},
+            {'instance': 2, 'friendly_name': expectedInstances[1]}
+        ])
+
+        actualInstances = self.manager.listInstances()
+
+        self.instance.list.assert_called_once()
+        self.assertEqual(expectedInstances, actualInstances)
+
+    def test_change_managed_instance_when_(self):
+        self.instance.select = mock.Mock()
+
+        self.manager.selectInstance(0)
+
+        self.instance.select.assert_called_once_with(0)
+
     def test_turn_managed_instance_on_when_asked(self):
         self.instance.on = mock.Mock()
 

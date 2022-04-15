@@ -51,6 +51,8 @@ except ImportError:
         def getAddonInfo(self, key):
             if key == 'id':
                 return 'addon.fake'
+            if key == 'name':
+                return 'Fake add-on'
             if key == 'path':
                 return '.'
             return None

@@ -1,4 +1,1 @@
-# First version
-
-- Only control the first instance
-- Manual switch
+- New feature: Select the Hyperion LED instance to manage

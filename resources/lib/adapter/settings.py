@@ -16,3 +16,6 @@ class Settings:
 
     def getHyperionInstance(self):
         return int(self.addon.getSetting('hyperion_instance'))
+
+    def setHyperionInstance(self, instance):
+        self.addon.setSettingInt(instance)

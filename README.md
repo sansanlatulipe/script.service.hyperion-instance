@@ -10,13 +10,10 @@ It automatically turns a Hyperion LED instance on when a video is playing and tu
 ## Features
 
 * Automatically switch the LED instance while playing a video
+* Select the Hyperion LED instance to manage
 * Manually switch the managed LED instance
 * Handle local or distant hosted Hyperion
 * Authentication through access token
-
-### To do
-
-* Select the Hyperion LED instance to manage
 
 ## How it works
 

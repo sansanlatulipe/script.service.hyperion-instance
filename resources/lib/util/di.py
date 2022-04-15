@@ -36,7 +36,7 @@ class Container:
     def _initHyperionInstance(self):
         return hyperionAdapter.Instance(
             self.get('hyperion.http'),
-            self.settings.getHyperionInstance()
+            self.settings
         )
 
     def _initKodiMonitor(self):

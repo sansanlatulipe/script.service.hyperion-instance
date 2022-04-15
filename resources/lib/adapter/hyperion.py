@@ -1,7 +1,7 @@
 class Instance:
-    def __init__(self, http, managedInstance):
+    def __init__(self, http, settings):
         self.http = http
-        self.managedInstance = managedInstance
+        self.settings = settings
 
     def list(self):
         return [
@@ -10,20 +10,24 @@ class Instance:
             if instance.get('instance') != 0
         ]
 
+    def select(self, num):
+        instances = self.list()
+        self.settings.setHyperionInstance(instances[num].get('instance'))
+
     def isOn(self):
         for instance in self.list():
-            if instance.get('instance') == self.managedInstance:
+            if instance.get('instance') == self.settings.getHyperionInstance():
                 return instance.get('running')
         return False
 
     def on(self):
         self.http.call('instance', {
             'subcommand': 'startInstance',
-            'instance': self.managedInstance
+            'instance': self.settings.getHyperionInstance()
         })
 
     def off(self):
         self.http.call('instance', {
             'subcommand': 'stopInstance',
-            'instance': self.managedInstance
+            'instance': self.settings.getHyperionInstance()
         })

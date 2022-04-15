@@ -5,9 +5,13 @@ from resources.lib.adapter import hyperion
 
 class InstanceShould(unittest.TestCase):
     @mock.patch('resources.lib.infra.hyperion.Http')
-    def setUp(self, http):
+    @mock.patch('resources.lib.adapter.settings.Settings')
+    def setUp(self, http, settings):
         self.http = http
-        self.instance = hyperion.Instance(http, 1)
+        self.settings = settings
+        self.instance = hyperion.Instance(http, settings)
+
+        self.settings.getHyperionInstance = mock.Mock(return_value=1)
 
     def test_list_instances_from_hyperion_server_info(self):
         self.http.call = mock.Mock(return_value=self._buildServerInfo())
@@ -16,6 +20,15 @@ class InstanceShould(unittest.TestCase):
 
         self.http.call.assert_called_once_with('serverinfo')
         self.assertEqual(self._buildInstances(1, True), instances)
+
+    def test_update_settings_with_instance_id_when_a_new_managed_instance_is_selected(self):
+        self.http.call = mock.Mock(return_value=self._buildServerInfo(managedInstance=3))
+        self.settings.setHyperionInstance = mock.Mock()
+
+        self.instance.select(0)
+
+        self.http.call.assert_called_once_with('serverinfo')
+        self.settings.setHyperionInstance.assert_called_once_with(3)
 
     def test_be_on_when_managed_instance_is_running(self):
         self.http.call = mock.Mock(return_value=self._buildServerInfo())

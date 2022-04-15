@@ -7,7 +7,8 @@
         <setting type="text" label="30130" id="hyperion_token" />
 
         <setting type="lsep" label="30200" />
-        <setting type="select" label="30210" id="hyperion_instance" values="1" default="1" />
+        <setting type="action" label="30210" action="RunScript(script.service.hyperion-instance,select-instance)" />
+        <setting type="number" label="30210" id="hyperion_instance" visible="false" />
         <setting type="action" label="30220" action="RunScript(script.service.hyperion-instance,switch)" />
     </category>
 </settings>
