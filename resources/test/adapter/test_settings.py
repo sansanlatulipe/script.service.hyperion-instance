@@ -55,8 +55,8 @@ class SettingsShould(unittest.TestCase):
         self.assertEqual(expectedSetting, setting)
 
     def test_set_hyperion_instance_from_addon_settings(self):
-        self.addon.setSettingInt = mock.Mock()
+        self.addon.setSetting = mock.Mock()
 
         self.settings.setHyperionInstance(1)
 
-        self.addon.setSettingInt.assert_called_once_with(1)
+        self.addon.setSetting.assert_called_once_with('hyperion_instance', '1')
