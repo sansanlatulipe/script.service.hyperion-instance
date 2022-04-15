@@ -42,7 +42,7 @@ msgstr "Instance"
 
 msgctxt "#30210"
 msgid "Settings Hyperion instance name"
-msgstr "Name"
+msgstr "Select"
 
 msgctxt "#30220"
 msgid "Settings Hyperion instance switch"

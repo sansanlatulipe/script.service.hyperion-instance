@@ -14,7 +14,7 @@ class Launcher:
 
     def selectInstance(self):
         try:
-            selectedInstance = Dialog.select(
+            selectedInstance = Dialog().select(
                 self.container.get('addon').getLocalizedString(30200).encode('utf-8'),
                 self.container.get('led.manager').listInstances()
             )

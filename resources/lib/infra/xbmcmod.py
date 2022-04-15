@@ -60,6 +60,9 @@ except ImportError:
         def getSetting(self, key):
             return self.settings.get(key)
 
+        def setSetting(self, key, value):
+            self.settings[key] = value
+
         def getLocalizedString(self, labelId):
             return 'Message {}'.format(labelId)
 
