@@ -13,24 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Check coding style
         uses: sansanlatulipe/github-actions/python-lint@main
         with:
           python-version: 3.x
-          exclude-path: resources/test
 
   unittest:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [2.7, 3.x]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Run unit tests
         uses: sansanlatulipe/github-actions/python-unittest@main
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.x
           coverage-path: ./resources/lib/
-          coverage-threshold: 50
+          coverage-threshold: 70
