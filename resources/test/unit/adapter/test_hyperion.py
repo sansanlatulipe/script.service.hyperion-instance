@@ -1,5 +1,5 @@
-from resources.test.testmod import unittest
-from resources.test.testmod import mock
+import unittest
+from unittest import mock
 from resources.lib.adapter import hyperion
 
 

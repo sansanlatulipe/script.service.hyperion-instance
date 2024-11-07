@@ -1,14 +1,16 @@
 import json
-from resources.test.testmod import unittest
-from resources.test.testmod import mock
+import unittest
+from unittest import mock
 from resources.lib.infra import hyperion
 
 
 class HttpShould(unittest.TestCase):
-    @mock.patch('resources.lib.infra.pymod.HTTPConnection')
-    def setUp(self, connection):
+    @mock.patch('http.client.HTTPConnection')
+    @mock.patch('resources.lib.util.logger.Logger')
+    def setUp(self, logger, connection):
+        self.logger = logger
         self.connection = connection
-        self.http = hyperion.Http(connection, None)
+        self.http = hyperion.Http(self.logger, self.connection, None)
 
     def test_send_a_post_request_with_the_wanted_command(self):
         self.connection.request = mock.Mock()

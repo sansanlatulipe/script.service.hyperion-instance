@@ -1,8 +1,6 @@
-from resources.lib.util import log
-
-
 class Manager:
-    def __init__(self, hyperionInstance):
+    def __init__(self, logger, hyperionInstance):
+        self.logger = logger
         self.instance = hyperionInstance
 
     def listInstances(self):
@@ -15,15 +13,15 @@ class Manager:
         self.instance.select(instanceNum)
 
     def on(self):
-        log.info('Turning Hyperion managed instance on')
+        self.logger.info('Turning Hyperion managed instance on')
         self.instance.on()
 
     def off(self):
-        log.info('Turning Hyperion managed instance off')
+        self.logger.info('Turning Hyperion managed instance off')
         self.instance.off()
 
     def switch(self):
-        log.info('Manually switching Hyperion managed instance')
+        self.logger.info('Manually switching Hyperion managed instance')
         if self.instance.isOn():
             self.off()
         else:

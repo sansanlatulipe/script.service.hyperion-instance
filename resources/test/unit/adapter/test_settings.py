@@ -1,10 +1,10 @@
-from resources.test.testmod import unittest
-from resources.test.testmod import mock
+import unittest
+from unittest import mock
 from resources.lib.adapter import settings
 
 
 class SettingsShould(unittest.TestCase):
-    @mock.patch('resources.lib.infra.xbmcmod.Addon')
+    @mock.patch('xbmcaddon.Addon')
     def setUp(self, addon):
         self.addon = addon
         self.settings = settings.Settings(addon)
@@ -29,11 +29,11 @@ class SettingsShould(unittest.TestCase):
 
     def test_get_hyperion_port_from_addon_settings(self):
         expectedSetting = 1234
-        self.addon.getSetting = mock.Mock(return_value=str(expectedSetting))
+        self.addon.getSettingInt = mock.Mock(return_value=expectedSetting)
 
         setting = self.settings.getHyperionPort()
 
-        self.addon.getSetting.assert_called_once_with('hyperion_port')
+        self.addon.getSettingInt.assert_called_once_with('hyperion_port')
         self.assertEqual(expectedSetting, setting)
 
     def test_get_hyperion_token_from_addon_settings(self):
@@ -47,16 +47,17 @@ class SettingsShould(unittest.TestCase):
 
     def test_get_hyperion_instance_from_addon_settings(self):
         expectedSetting = 1
-        self.addon.getSetting = mock.Mock(return_value=str(expectedSetting))
+        self.addon.getSettingInt = mock.Mock(return_value=expectedSetting)
 
         setting = self.settings.getHyperionInstance()
 
-        self.addon.getSetting.assert_called_once_with('hyperion_instance')
+        self.addon.getSettingInt.assert_called_once_with('hyperion_instance')
         self.assertEqual(expectedSetting, setting)
 
     def test_set_hyperion_instance_from_addon_settings(self):
-        self.addon.setSetting = mock.Mock()
+        expectedSetting = 1
+        self.addon.setSettingInt = mock.Mock()
 
-        self.settings.setHyperionInstance(1)
+        self.settings.setHyperionInstance(expectedSetting)
 
-        self.addon.setSetting.assert_called_once_with('hyperion_instance', '1')
+        self.addon.setSettingInt.assert_called_once_with('hyperion_instance', expectedSetting)

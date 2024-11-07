@@ -1,9 +1,9 @@
 import json
-from resources.lib.util import log
 
 
 class Http:
-    def __init__(self, connection, token):
+    def __init__(self, logger, connection, token):
+        self.logger = logger
         self.connection = connection
         self.headers = {'Authorization': 'token {}'.format(token)} if token else {}
 
@@ -30,6 +30,6 @@ class Http:
     def _decodeResponse(self):
         response = json.loads(self.connection.getresponse().read().decode())
         if not response.get('success'):
-            log.warn('An error occurs while calling Hyperion API: ' + response.get('error'))
+            self.logger.warn('An error occurs while calling Hyperion API: ' + response.get('error'))
             raise IOError(response.get('error'))
         return response

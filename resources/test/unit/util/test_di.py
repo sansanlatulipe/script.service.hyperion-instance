@@ -1,5 +1,5 @@
-from resources.test.testmod import unittest
-from resources.test.testmod import mock
+import unittest
+from unittest import mock
 from resources.lib.util.di import Container
 
 
@@ -29,12 +29,14 @@ class ContainerShould(unittest.TestCase):
     def test_contain_the_following_services(self):
         services = [
             'addon',
-            'led.manager',
-            'video.monitor',
+            'hyperion.http',
             'hyperion.instance',
             'kodi.monitor',
             'kodi.player',
-            'hyperion.http'
+            'led.manager',
+            'logger',
+            'settings',
+            'video.monitor'
         ]
         for service in services:
             self.assertIsNotNone(self.container.get(service))

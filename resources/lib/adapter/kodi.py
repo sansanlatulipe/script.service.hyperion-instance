@@ -1,4 +1,4 @@
-from resources.lib.infra.xbmcmod import Player
+from xbmc import Player
 
 
 class MyPlayer(Player):

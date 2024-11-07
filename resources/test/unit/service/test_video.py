@@ -1,10 +1,10 @@
-from resources.test.testmod import unittest
-from resources.test.testmod import mock
+import unittest
+from unittest import mock
 from resources.lib.service import video
 
 
 class MonitorShould(unittest.TestCase):
-    @mock.patch('resources.lib.infra.xbmcmod.Monitor')
+    @mock.patch('xbmc.Monitor')
     @mock.patch('resources.lib.adapter.kodi.MyPlayer')
     def setUp(self, kodiMonitor, kodiPlayer):
         self.kodiMonitor = kodiMonitor

@@ -9,13 +9,13 @@ class Settings:
         return self.addon.getSetting('hyperion_ip')
 
     def getHyperionPort(self):
-        return int(self.addon.getSetting('hyperion_port'))
+        return self.addon.getSettingInt('hyperion_port')
 
     def getHyperionToken(self):
         return self.addon.getSetting('hyperion_token')
 
     def getHyperionInstance(self):
-        return int(self.addon.getSetting('hyperion_instance'))
+        return self.addon.getSettingInt('hyperion_instance')
 
     def setHyperionInstance(self, instance):
-        self.addon.setSetting('hyperion_instance', str(instance))
+        self.addon.setSettingInt('hyperion_instance', int(instance))

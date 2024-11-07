@@ -1,4 +1,6 @@
-/.coverage
+/.build
+/.coverage*
 /.pytest_cache
+/.vscode
 __pycache__
 *.pyc

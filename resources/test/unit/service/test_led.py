@@ -1,13 +1,15 @@
-from resources.test.testmod import unittest
-from resources.test.testmod import mock
+import unittest
+from unittest import mock
 from resources.lib.service import led
 
 
 class ManagerShould(unittest.TestCase):
     @mock.patch('resources.lib.adapter.hyperion.Instance')
-    def setUp(self, instance):
+    @mock.patch('resources.lib.util.logger.Logger')
+    def setUp(self, logger, instance):
+        self.logger = logger
         self.instance = instance
-        self.manager = led.Manager(instance)
+        self.manager = led.Manager(self.logger, self.instance)
 
     def test_retrieve_available_instance_when_listing_them_from_hyperion(self):
         expectedInstances = ['Instance 1', 'Instance 2']
