@@ -25,7 +25,7 @@ class InstanceShould(unittest.TestCase):
         self.http.call = mock.Mock(return_value=self._buildServerInfo(managedInstance=3))
         self.settings.setHyperionInstance = mock.Mock()
 
-        self.instance.select(0)
+        self.instance.select(1)
 
         self.http.call.assert_called_once_with('serverinfo')
         self.settings.setHyperionInstance.assert_called_once_with(3)
@@ -75,14 +75,13 @@ class InstanceShould(unittest.TestCase):
             'success': True,
             'info': {
                 'foo': ['bar'],
-                'instance': [
-                    {'instance': 0, 'running': False, 'friendly_name': 'My First LED Hardware instance'}
-                ] + self._buildInstances(managedInstance, isOn)
+                'instance': self._buildInstances(managedInstance, isOn)
             }
         }
 
     def _buildInstances(self, managedInstance, isOn):
         return [
+            {'instance': 0, 'running': False, 'friendly_name': 'My First LED Hardware instance'},
             {'instance': managedInstance, 'running': isOn, 'friendly_name': 'Instance 1'},
             {'instance': 2, 'running': False, 'friendly_name': 'Instance 2'}
         ]

@@ -4,20 +4,19 @@ class Instance:
         self.settings = settings
 
     def list(self):
-        return [
-            instance
-            for instance in self.http.call('serverinfo').get('info').get('instance')
-            if instance.get('instance') != 0
-        ]
+        return self.http.call('serverinfo').get('info').get('instance')
 
     def select(self, num):
         instances = self.list()
         self.settings.setHyperionInstance(instances[num].get('instance'))
 
     def isOn(self):
-        for instance in self.list():
-            if instance.get('instance') == self.settings.getHyperionInstance():
-                return instance.get('running')
+        try:
+            for instance in self.list():
+                if instance.get('instance') == self.settings.getHyperionInstance():
+                    return instance.get('running')
+        except IOError:
+            pass
         return False
 
     def on(self):
