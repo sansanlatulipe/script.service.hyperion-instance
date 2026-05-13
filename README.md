@@ -9,29 +9,50 @@ It automatically turns a Hyperion LED instance on when a video is playing and tu
 
 ## Features
 
-* Automatically switch the LED instance while playing a video
-* Select the Hyperion LED instance to manage
-* Manually switch the managed LED instance
-* Handle local or distant hosted Hyperion
-* Authentication through access token
+- Automatically switch the LED instance while playing a video
+- Select the Hyperion LED instance to manage
+- Manually switch the managed LED instance
+- Handle local or distant hosted Hyperion
+- Authentication through access token
 
 ## How it works
 
-### Business logic
+### Quick start
 
-Monitor the Kodi player.
-When it starts playing a medium, if it is a video then asks Hyperion to turn on the managed LED instance on.
-When it stops playing the medium, asks Hyperion to turn the managed LED instance off.
+You need a Hyperion instance, with HTTP reachable from Kodi
 
-The Hyperion managed LED instance can be selected from the add-on settings.
+1. Create authentication token on Hyperion
+    a. Create a LED instance if it does not exist yet
+        The default one cannot be switched off
+    b. Enable "API Authentication" and "Local Admin API Authentication" from Network Services
+    c. Save the changes
+    d. Create a token from Token Management and copy the secret
+        Be careful, you will not be able to retrieve it later
+2. Connect to Hyperion
+    a. Fill in the IP address and port in the addon settings
+    b. Paste your token secret generated in the previous step
+    c. Save the changes
+3. Select the LED instance to manage
+    a. Click the "Select" action from the addon settings
+    b. Choose the LED instance you want to manage from the list
+    c. Save the changes
+    d. Test your configuration by clicking the "Switch" action from the addon settings
+
+### Data protection
+
+Your authentication token is store locally (in Kodi's addon data).
+
+There is no third-party component (like a server) between your Kodi and Hyperion.
+
+## How to contribute
 
 ### Technical logic
 
 The add-on is launched from `service.py`.
 
 Except for the entry point, all code can be found in the directory `resources/lib/`:
-* `launcher.py`: launcher functions
-* `util/`: some helper classes and functions
-* `service/`: business logic
-* `infra/`: technical logic, like connection to API or backward compatibily
-* `adapter/`: glue between `service/` and `infra/`
+- `launcher.py`: launcher functions
+- `util/`: some helper classes and functions
+- `service/`: business logic
+- `infra/`: technical logic, like connection to API or backward compatibily
+- `adapter/`: glue between `service/` and `infra/`
